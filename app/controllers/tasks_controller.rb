@@ -19,7 +19,7 @@ class TasksController < ApplicationController
             flash[:success] = "Task が正常に保存されました"
             redirect_to @task
         else
-            flash.now[:danger] = 'Task が保存されませんでした'
+            flash.now[:danger] = "Task が保存されませんでした"
             render :new
         end
     end
@@ -48,6 +48,8 @@ class TasksController < ApplicationController
     end
 
     private
+    
+    
 
     def task_params
         params.require(:task).permit(:content)
